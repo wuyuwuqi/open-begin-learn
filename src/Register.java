@@ -1,3 +1,4 @@
+import java.lang.annotation.ElementType;
 import java.util.Scanner;
 
 /**
@@ -29,5 +30,26 @@ public class Register {
             }
         }
 
+        Login();
+    }
+
+    public static void Login(){
+        Scanner input = new Scanner(System.in);
+        int time = 3;
+        for (int i = 0;i < 3;i++){
+            System.out.println("输入用户名");
+            String uName = input.nextLine();
+            System.out.println("输入密码");
+            String pwd = input.nextLine();
+
+            //判断密码输入正确
+            if ("admin".equals(uName) && "123456".equals(pwd)){
+                System.out.println("登录成功,感谢使用本系统");
+                break;
+            }
+            else{
+                System.out.println("登录失败，还可以重试" + (2 - i) + "次");
+            }
+        }
     }
 }
